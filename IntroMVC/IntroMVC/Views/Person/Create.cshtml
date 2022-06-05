@@ -1,0 +1,12 @@
+﻿
+
+
+<h2>Create</h2>
+<form action="" method="post">
+    Name : <input type="text" name="Name" value="@(Model == null ? "" : Model.Name)" class="form-control" /> 
+    @Html.ValidationMessage("Name","",new { @class="text-danger"},"span")
+    Id   : <input type="text" name="Id" value="@(Model == null ? "":Model.Id)" class="form-control"/>
+    Dob  : <input type="date" name="Dob" value="" class="form-control"/>
+    <input  type="submit" class="btn btn-success"/>
+</form>
+

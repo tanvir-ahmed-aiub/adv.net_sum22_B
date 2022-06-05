@@ -23,14 +23,25 @@ namespace IntroMVC.Controllers
             pr.Id = 1;
             pr.Name = "Ahsan";
             pr.Dob = "12.12.12";
+            
             return View(pr);
         }
 
         // GET: Person
         public ActionResult Index()
         {
-            ViewBag.Name = "Sabbir";
-            return View();
+            var people = new List<Person>();
+            for (int i = 1; i <= 10; i++) {
+                people.Add(
+                    new Person() { 
+                        Id=i,
+                        Name = "Person " + i,
+                        Dob = "12.12.12"
+                    }
+                 );
+            }
+            //var data = (from p in people select new { p.Dob, p.Name }).Single();
+            return View(people);
         }
 
         public ActionResult Register() {
@@ -39,6 +50,23 @@ namespace IntroMVC.Controllers
             return RedirectToAction("Profile");
             //return RedirectToAction("Index", "Home");
             //return View();
+        }
+        [HttpGet]
+        public ActionResult Create() {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Create(Person p) {
+            if (ModelState.IsValid) {
+                return RedirectToAction("Index");
+            }
+            return View(p);
+        }
+        public ActionResult Submit(Person p) {
+            /*ViewBag.FormName = Name;
+            ViewBag.Id = Id;
+            ViewBag.Dob = Dob;*/
+            return View(p);
         }
     }
 }

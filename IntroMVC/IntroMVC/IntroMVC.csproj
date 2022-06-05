@@ -166,6 +166,9 @@
     <Content Include="Views\Home\StudentList.cshtml" />
     <Content Include="Views\Home\TeacherList.cshtml" />
     <Content Include="Views\Person\Profile.cshtml" />
+    <Content Include="Views\Person\Index.cshtml" />
+    <Content Include="Views\Person\Create.cshtml" />
+    <Content Include="Views\Person\Submit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
