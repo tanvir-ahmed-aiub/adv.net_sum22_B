@@ -10,6 +10,7 @@ namespace AuthenticationAuthr.Auth
     {
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
+            
             var value = httpContext.Session["logged_user"];
             if (value != null) {
                 return true;
